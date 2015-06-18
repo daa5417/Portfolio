@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/about', to: 'portfolio#about'
   get '/contact', to: 'portfolio#contact'
+  post 'send' => 'portfolio#send', as: 'send_form'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

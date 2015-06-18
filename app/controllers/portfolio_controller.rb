@@ -7,4 +7,7 @@ class PortfolioController < ApplicationController
 
   def contact
   end
+
+  def send
+  end
 end

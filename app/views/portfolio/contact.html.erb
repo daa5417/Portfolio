@@ -54,30 +54,30 @@
 <div class="container">
     <main class="row">
         <div class="wrapDat"><h2>Contact Deborah</h2>
-        <form method="GET" action="#">
+        <%= form_tag "/sendform", method: "post" do %>
+        	<%= label_tag(:firstname, "First Name:") %>
+        	<%= text_field_tag(:firstname) %>
 
-        	<label for="firstname">First Name</label>
-        	<input type="text" name="firstname" id="firstname"/>
+          <%= label_tag(:lastname, "Last Name:") %>
+          <%= text_field_tag(:lastaname) %>
 
-        	<label for="lastname">Last Name</label>
-        	<input type="text" name="lastname" id="lastname"/>
-        </br></br>
-        	<label for="email">Email</label>
-            <input type="email" name="email" id="email"/>
-        </br></br>
-            <label for="selection">Why are you contacting us?</label>
-            <select name="selection" id="selection">
-                <option value="selection1">Because you're awesome.</option>
-                <option value="selection2">Because you're wonderful.</option>
-                <option value="selection3">Because you're fan-freakin-tastic.</option>
-            </select>
-            <p></p>
+          <%= label_tag(:email, "Email:") %>
+          <%= text_field_tag(:email) %>
 
-            <p>Do you have any additional comments?</p>
-            <textarea name="message" form="message" rows="10">Enter text here...</textarea>
-            <p></p>
-            <input type="submit" value="Submit"/>
-        </form>
+          <label for="selection">Why are you contacting us?</label>
+          <select name="selection" id="selection">
+              <option value="selection1">Because you're awesome.</option>
+              <option value="selection2">Because you're wonderful.</option>
+              <option value="selection3">Because you're fan-freakin-tastic.</option>
+          </select>
+          <%= label_tag(:message, "Do you have any additional comments?:") %>
+          <%= text_area_tag(:message) %>
+
+          <!-- p>Do you have any additional comments?</p>
+          <textarea name="message" form="message" rows="10">Enter text here...</textarea>
+          <p></p> -->
+          <%= submit_tag "Submit" %>
+        <% end %>
     <hr>
     <div text-align="center"><a href="http://www.linkedin.com/in/deborahanderson0" target="_blank">
             <%= image_tag("linkedin-logo.png", :alt => "LinkedIn", :width => "100px", :border => "0px", :class => "imageStyle")%>
